@@ -1,4 +1,5 @@
 # list 用方括号[] 表示列表,用逗号,分割其中的元素
+# list 列表通常用来存储一些经常变化的东西，比如游戏角色之类的，一些不可修改的值的集合通常用元组
 webdrivre = ['chorme', 'firefox', 'safari', 'ie', '360']
 print(webdrivre)
 # 访问列表元素，按照索引从0开始
