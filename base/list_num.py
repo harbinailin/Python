@@ -20,9 +20,26 @@ for value in range(1, 11):
     # squares.append(square)
     squares.append(value ** 2)
 print(squares)
+# 列表解析
+square = [value ** 2 for value in range(1, 11)]
+print(square)
 
 # 最大值、最小值、求和
 digits = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 print(max(digits))
 print(min(digits))
 print(sum(digits))
+
+# 使用for循环打印1-20
+digits = []
+for digits in range(1, 21):
+    print(digits)
+
+# # 打印1-20的奇数
+# digits = []
+# for digits in range(1, 20, 2):
+#     print(digits)
+
+# 打印1-10的立方
+cube = [value ** 3 for value in range(1, 11)]
+print(cube)
