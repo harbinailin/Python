@@ -49,7 +49,7 @@
 # my_webdirver = 'firefox'
 # webdrivre.remove(my_webdirver)
 # print(webdrivre)
-# print(f"my webdirver is {my_webdirver}")
+print(f"my webdirver is {my_webdirver}")
 
 # 给定两个列表，返回相同和不同的元素
 list1=[1,2,3]
