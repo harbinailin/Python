@@ -26,3 +26,8 @@ while True:
 # 每一个socke对象都有accept bind(address) close connect(address) send shutdown(0receiver1sender2all)
 # 创建socket对象，使用bind指定port端口，调用accept等待客户端连接并返回connection对象，表示已连接到客户端
 # 导入socket模块
+
+# 用TCP协议进行Socket编程在Python中十分简单。
+# 对于客户端，要主动连接服务器的IP和指定端口，
+# 对于服务器，要首先监听指定端口，然后，对每一个新的连接，创建一个线程或进程来处理。通常，服务器程序会无限运行下去。
+# 同一个端口，被一个Socket绑定了以后，就不能被别的Socket绑定了。
