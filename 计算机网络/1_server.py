@@ -13,9 +13,10 @@ while True:
     # 建立客户端连接
     clientsocket, addr = serversocket.accept()
     print("连接地址: %s" % str(addr))
-    message = 'offer多多,美团快手捞捞我' + "\r\n"
+    message = 'offer多多' + "\r\n"
     clientsocket.send(message.encode('utf-8'))
     clientsocket.close()
+
 
 # socket 套接字
 # 应用程序通过socket向网络发出请求或应答网络请求，使主机间或一台计算机上的进程间可以通信。
