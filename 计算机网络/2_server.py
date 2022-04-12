@@ -1,51 +1,47 @@
-# Importing socket library of python by which we connect server and client
 import socket
 
-# creating socket object
+
 s = socket.socket()
-print("Sender  created")  # printing after connection creation
+print("发送端创建成功")
+s.bind(('localhost', 8998))
+s.listen(3)
 
-s.bind(('localhost', 8998))  # binding socket object with ip adress and port number
-s.listen(3)  # listenting to the client maximum 3 client allowed here as 3 is passed
-
-print("waiting for connection")  # waiting for the connection
+print("等待连接")
 # s.settimeout(15.0)
-c, addr = s.accept()  # it will accept the connection and return client socket and adress
-print("connected with ", addr)
-ack_expected = "1"  # expected frame number
+c, addr = s.accept()
+print("ip地址和端口号", addr)
+ack_expected = "1"
 ack = "0"
 
-while True:  # this while loop will iterate until user want to stay for connection
+while True:
 
-    frame = input("enter frame to send: ")  # enter frame to send
+    frame = input("输入要发送的信息")
 
-    c.send(bytes(frame, 'utf-8'))  # now sent frame to client as byte stream
-    while ack_expected != ack:  # until we can not get expected acknowledgement number
-        # from receiver we will resend frame
-
-        # now we will put try and catch block to handle exception caused by settimeout() function
+    c.send(bytes(frame, 'utf-8'))
+    while ack_expected != ack:
         try:
-            c.settimeout(12.0)  # timeout duration of 12 second
+            c.settimeout(12.0)
             ack = c.recv(1024).decode()  # received acknowledgement from receiver
 
             while ack_expected != ack:  # if ack expected doesnt match with received one then resend frame
-                print(frame, " frame is resent !")
+                print(frame, "ack值不正确，信息重新发送!")
                 c.send(bytes(frame, 'utf-8'))
                 ack = c.recv(1024).decode()
-                print(ack)
+                print('ack=')
         except socket.timeout:  # in case of time out again resend the frame
 
             while ack_expected != ack:
-                print(frame, " frame is resend after timeout of 12 sec !!")
+                print(frame, " 超时12s，信息将重新发送!!")
                 break
 
     # asking user if wants to close the connection
-    stop_connection = input("wants to stop connection type: 'yes' to exit ")
+    print("信息成功传输")
+    stop_connection = input("输入'yes'以关闭连接,输入'no'以继续传输数据")
     if stop_connection == "yes":
-        print("connection closed")
-        c.close()  # to close connection
+        print("连接已关闭")
+        c.close()
+        s.close()
         break
-    # changing expected ack value accordingly
     if ack_expected == "0":
         ack_expected = "1"
     else:
