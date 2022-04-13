@@ -20,19 +20,18 @@ while True:
     while ack_expected != ack:
         try:
             c.settimeout(10.0)
-            ack = c.recv(1024).decode()  # received acknowledgement from receiver
+            ack = c.recv(1024).decode()
 
-            while ack_expected != ack:  # if ack expected doesnt match with received one then resend frame
+            while ack_expected != ack:
                 print(frame, "ack值不正确，验证失败，信息重新发送!")
                 c.send(bytes(frame, 'utf-8'))
                 ack = c.recv(1024).decode()
-        except socket.timeout:  # in case of time 76out again resend the frame
+        except socket.timeout:
 
             while ack_expected != ack:
                 print(frame, "超时10s，信息将重新发送!!")
                 break
 
-    # asking user if wants to close the connection
     print("验证通过，信息成功传输")
     stop_connection = input("输入'yes'以关闭连接,输入'no'以继续传输数据")
     if stop_connection == "yes":
