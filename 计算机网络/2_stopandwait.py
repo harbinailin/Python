@@ -4,5 +4,5 @@ class crc:
             for i in generatorPolynomial.len():
                 data += '0'
         else:
-            data+=checkCode
-        print("data:"%data)
+            data += checkCode
+        print("data:" % data)
