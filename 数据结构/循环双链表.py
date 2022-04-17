@@ -41,7 +41,7 @@ class CircularDoubleLinkedList(object):
             return False
 
     def InsertElementInTail(self):
-        Element = input("请输入待插入结点的值：")
+        Element = input("请输入待插入结点的值（尾插）：")
         if Element == "#":
             return
         nNode = DoubleLinkedNode(int(Element))
@@ -54,7 +54,7 @@ class CircularDoubleLinkedList(object):
         self.head.prev = nNode
 
     def InsertElementInHead(self):
-        Element = input("请输入待插入结点的值：")
+        Element = input("请输入待插入结点的值（头插）：")
         if Element == "#":
             return
         cNode = self.head.next
