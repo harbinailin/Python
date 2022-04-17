@@ -76,7 +76,7 @@ class DoubleLinkedList(object):
             else:
                 qNode = cNode.next
                 pNode.next = qNode
-                qNode, prev = pNode
+                qNode.prev = pNode
                 del cNode
                 print(f"成功删除数据值为{dElement}的结点")
         else:
