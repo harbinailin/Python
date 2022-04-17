@@ -52,10 +52,11 @@ class SequenceList(object):
             return False
 
 
-SeqList = SequenceList()
-SeqList.CreateSequenceList()
-SeqList.TraverseElement()
-SeqList.FindElement()
-SeqList.InsertElemnt()
-SeqList.DeleteElementById()
-SeqList.DeleteElementByKey()
+if __name__ == '__main__':
+    SeqList = SequenceList()
+    SeqList.CreateSequenceList()
+    SeqList.TraverseElement()
+    SeqList.FindElement()
+    SeqList.InsertElemnt()
+    SeqList.DeleteElementById()
+    SeqList.DeleteElementByKey()
