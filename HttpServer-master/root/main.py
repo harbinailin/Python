@@ -1,4 +1,3 @@
-# !E:\python\venv\Scripts\
 # -*- coding:utf-8 -*-
 
 # 全局变量
@@ -9,7 +8,7 @@ GET = None
 
 def app():
     if POST is not None:
-        print 'POST ', POST
+        print('POST ', POST)
         if ('name' in POST.keys()) and ('password' in POST.keys()) and (POST['name'] == '123') and (POST['password']=='123'):
             SESSION.setCookie('name', '123')
             SESSION.write2XML()

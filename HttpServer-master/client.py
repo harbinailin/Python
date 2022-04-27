@@ -1,5 +1,3 @@
-#!E:\python\venv\Scripts
-
 # -*- coding:utf-8 -*-
 
 import socket
@@ -8,7 +6,7 @@ import socket
 def post_request():
     req = 'POST /?ni=00 HTTP/1.1\r\n'
     req = req + 'Host: 127.0.0.1:9999\r\n\r\n'
-    req = req + 'name=linyi&data=163'
+    req = req + 'name=ailin&data=163'
     return req
 
 
