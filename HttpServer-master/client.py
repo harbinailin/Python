@@ -4,7 +4,7 @@ import socket
 
 
 def post_request():
-    req = 'POST /?ni=00 HTTP/1.1\r\n'
+    req = 'POST / HTTP/1.1\r\n'
     req = req + 'Host: 127.0.0.1:9999\r\n\r\n'
     req = req + 'name=ailin&data=163'
     return req
