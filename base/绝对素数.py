@@ -38,4 +38,4 @@ for i in range(10, 100):  # 根据题目两位绝对素数 范围是10-99
 print("满足条件的绝对素数有：")
 for p in list:
     print(p, end="  ")
-print()
+print(f"\n绝对素数的个数是{len(list)}")
