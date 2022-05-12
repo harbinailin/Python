@@ -7,7 +7,7 @@ def isPrime(num: int):
     """
     if num == 1:
         return False
-    # 用x%i==0就不是素数 i的取值范围是2到x-1
+    # 用n%i==0就不是素数 i的取值范围是2到n-1
     for i in range(2, num):
         if num % i == 0:
             return False
