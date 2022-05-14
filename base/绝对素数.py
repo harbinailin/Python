@@ -29,8 +29,10 @@ def reverse(num: int):
 
 
 list = []
+a = int(input("min"))
+b = int(input("max"))
 # 设置一个空的列表用于存储绝对素数
-for i in range(10, 100):  # 根据题目两位绝对素数 范围是10-99
+for i in range(a, b):  # 根据题目两位绝对素数 范围是10-99
     if isPrime(i):
         if isPrime(reverse(i)):
             list.append(i)
