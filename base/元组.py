@@ -6,5 +6,11 @@ for demension in demensions:
 print(demensions[0])
 print(demensions[1])
 # demensions[0]=250 报错，元组元素不可单个赋值
-demensions=(100,500)
+demensions = (100, 500)
 print(demensions)
+
+a = (1, 2)
+b = ('a', 'b')
+print(a + b)
+a = (1, 2, 3)
+print(a[1:-1])
