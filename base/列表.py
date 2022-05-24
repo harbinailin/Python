@@ -46,7 +46,7 @@
 # # 根据元素值删除元素 当不知道元素位置时候，但是知道元素的值，可以用remove,但是remove只会删除第一个出现的值，所以列表中如果有多个相同需要删除的元素，就需要使用循环
 # webdrivre.remove('360')
 # print(webdrivre)
-# my_webdirver = 'firefox'
+my_webdirver = 'firefox'
 # webdrivre.remove(my_webdirver)
 # print(webdrivre)
 print(f"my webdirver is {my_webdirver}")
